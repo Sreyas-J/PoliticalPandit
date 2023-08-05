@@ -31,18 +31,37 @@ def home(request):
 
     if request.method=='POST':
         text=request.POST.get('tweet')
-        print(text)
-        words=get_keywords(text)
-        msg=Tweet(body=text)
-        msg.save()
+        #print(text)
+        like=request.POST.get('tweet_id')
+        if text:
+            
+            if profanity(text):
+                points=profile.points
+                points=points-1
+                profile.points=points
+                profile.save()
 
-        for word in words:
-            key,created=Keyword.objects.get_or_create(word=word)
-            if created:
-                key.save()
-            msg.keyword.add(key)
-            profile.keywords.add(key)
-        msg.save()
-        profile.save()
+            words=get_keywords(text)
+            msg=Tweet(body=text)
+            msg.save()
+            profile.tweets.add(msg)
+
+            for word in words:
+                key,created=Keyword.objects.get_or_create(word=word)
+                if created:
+                    key.save()
+                msg.keyword.add(key)
+                profile.keywords.add(key)
+            msg.save()
+            profile.save()
+
+        if like:
+            words=get_keywords(tweet.body)
+            for word in words:
+                key,created=Keyword.objects.get_or_create(word=word)
+                if created:
+                    key.save()
+                profile.keywords.add(key)
+                #print('liked')
 
     return render(request,'home.html',context)

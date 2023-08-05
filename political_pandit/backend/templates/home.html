@@ -170,6 +170,7 @@
                 <ul class="list-group list-group-flush">
                     {% for tweet in tweets %} 
                     
+                        {%csrf_token%}
                     <div class="heart-container" title="Like">
                         <input type="checkbox" class="checkbox"  id="Give-It-An-Id">
                         <!-- <input type="submit" value="submit"> -->
@@ -192,8 +193,11 @@
                             </svg>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-danger submitBtn" value="submit">
+                    <form class="tweets" action="" method="post"></form>
+                    <input type="submit" class="btn btn-danger submitBtn" value="Tweet:{{tweet.id}}" name="tweet_id">
+                    </form>
                         <li class="list-group-item">{{tweet.body}}</li>
+                    
 
                     
                     {% endfor %}
@@ -201,25 +205,18 @@
             
 
               </div>
-<<<<<<< HEAD
+
         </div>
-<<<<<<< HEAD
-        <form class="textbox container sticky-bottom pb-3">
-=======
-        <form class="textbox container" action="" method="post">
-            {% csrf_token %}
->>>>>>> work
-=======
-        </form>
+
         <form class="textbox container sticky-bottom pb-3" action="" method="post">
             {%csrf_token%}
             <!-- <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">Tweet</span>
->>>>>>> work
+
             <input type="text" name="tweet">
             </div> -->
             <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="tweet">
                 <button type="submit" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
               </div>
         </form>
