@@ -64,37 +64,14 @@
                   Tweets
                 </div>
                 <ul class="list-group list-group-flush">
-                  <span><img src="" alt="prof"></span>
-                  <li class="list-group-item bs-info-border-subtle">An item</li>
-                  <span><img src="" alt="prof"></span>
-                  <li class="list-group-item">A second item</li>
-                  <span><img src="" alt="prof"></span>
-                  <li class="list-group-item">A third item</li>
-                  <span><img src="" alt="prof"></span>
-                  <li class="list-group-item">An item</li>
-                  <span><img src="" alt="prof"></span>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
+                    {% for tweet in tweets %} 
+                        <li class="list-group-item">{{tweet.body}}</li>
+                    {% endfor %}
                 </ul>
               </div>
         </div>
         <form class="textbox container sticky-bottom pb-3">
-            <input type="text">
+            <input type="text" name="tweet">
             <button type="submit">tweet</button>
         </form>
     </div>
