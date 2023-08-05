@@ -24,3 +24,29 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+class Party(models.Model):
+    name = models.CharField(max_length=100,primary_key=True,unique=True)
+    symbol = models.ImageField(null=True)
+
+    def __str__(self):
+        return self.name
+  
+class LokSabhaConstituency(models.Model):
+    name = models.CharField(max_length=100,primary_key=True,unique=True)
+    const_no = models.IntegerField()
+    mp = models.CharField(max_length=200)
+    party = models.CharField(max_length = 200)
+
+    def __str__(self):
+        return self.name
+
+class AssemblyConstituency(models.Model):
+    num = models.IntegerField()
+    name = models.CharField(primary_key = True, max_length = 200)
+    mla = models.CharField(max_length = 200)
+    party = models.CharField(max_length = 200)
+
+    def __str__(self):
+        return self.name
+
