@@ -42,8 +42,9 @@
         <div class="tweets">
 
         </div>
-        <form class="textbox container">
-            <input type="text">
+        <form class="textbox container" action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="tweet">
             <button type="submit">tweet</button>
         </form>
     </div>

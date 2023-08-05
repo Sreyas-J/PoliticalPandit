@@ -29,4 +29,20 @@ def home(request):
             profile.visited.add(tweet)
         context={'tweets':new_tweets}
 
+    if request.method=='POST':
+        text=request.POST.get('tweet')
+        print(text)
+        words=get_keywords(text)
+        msg=Tweet(body=text)
+        msg.save()
+
+        for word in words:
+            key,created=Keyword.objects.get_or_create(word=word)
+            if created:
+                key.save()
+            msg.keyword.add(key)
+            profile.keywords.add(key)
+        msg.save()
+        profile.save()
+
     return render(request,'home.html',context)
