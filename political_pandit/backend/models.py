@@ -50,3 +50,20 @@ class AssemblyConstituency(models.Model):
     def __str__(self):
         return self.name
 
+class Option(models.Model):
+    name=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
+class Question(models.Model):
+    query=models.CharField(max_length=100,primary_key=True)
+    answer=models.ForeignKey(Option,related_name='question',on_delete=models.SET_NULL,null=True)
+    options=models.ManyToManyField(Option,related_name='questions')
+
+    def __str__(self):
+        return self.query
+    
+class Quiz(models.Model):
+    questions=models.ManyToManyField(Question,related_name='quiz')
+    users=models.ManyToManyField(Profile,related_name='quiz')

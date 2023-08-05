@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from .get_keywords import *
+from django.contrib import messages
 
 def home(request):
     tweets = Tweet.objects.all()
@@ -65,3 +66,30 @@ def home(request):
                 #print('liked')
 
     return render(request,'home.html',context)
+
+def quiz(request):
+    user=request.user
+    profile=Profile.objects.get(user=user)
+    this_quiz=None
+
+    for quiz in Quiz.objects.all():
+        if profile not in quiz.users.all():
+            this_quiz=quiz
+            break
+    if this_quiz== None:
+        messages.error(request,"You have attempted all the quizes")
+        return redirect('home')
+
+    if request.method == 'POST':
+        for question in this_quiz.questions.all():
+            ans = request.POST.get(str(question.query))
+            print(str(question.query))
+            if ans == question.answer.name:
+                points = profile.points
+                points += 1
+                profile.points = points
+                profile.save()
+    if this_quiz.id==1:
+        return render(request, 'quiz1.html', {'questions': this_quiz.questions.all()})
+    else:
+        return render(request, 'quiz2.html', {'questions': this_quiz.questions.all()})
