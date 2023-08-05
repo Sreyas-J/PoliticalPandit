@@ -2,13 +2,13 @@ import nltk
 from nltk.stem import PorterStemmer
 from rake_nltk import Rake
 from .models import *
+from profanity_check import predict
 
 nltk.download('stopwords')
 nltk.download('punkt')
 
-def getKeywordDB(post):
-    tweet=Tweet.objects.get(keywords=post)
-    return tweet.keywords
+def profanity(text):
+    return predict([text])
 
 def get_keywords(text):
     ps = PorterStemmer()

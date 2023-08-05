@@ -18,7 +18,7 @@ class Tweet(models.Model):
 class Profile(models.Model):
     user=models.OneToOneField(User,related_name='profile',on_delete=models.CASCADE,primary_key=True)
     keywords=models.ManyToManyField(Keyword,related_name='profile')
-    points=models.IntegerField()
+    points=models.IntegerField(default=0)
     tweets=models.ManyToManyField(Tweet,related_name='profile')
     visited=models.ManyToManyField(Tweet,related_name='profileName')
 
