@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                  <img src="" alt="profile pic" width="30" height="24">
+                  <img src="profile.jpg" alt="profile pic" width="30" height="24">
                 </a>            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -68,13 +68,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link">Home</a>
+                        <a class="nav-link", href = "{% url 'home2' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Task</a>
+                        <a href="{% url 'home' %}""nav-link">Tweets</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Coupouns</a>
+                        <a class="nav-link", href = "{% url 'task' %}">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href = "{% url 'wheel' %}">Coupons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href = "">Polls</a>
                     </li>
                 </ul>  
             </div>
@@ -98,7 +104,7 @@
                 </div>
           </div>
             {% endfor %}
-            <button type="submit">Submit</button>
+            <a href="{% url 'quiz2' %}"><button type="submit">Submit</button></a>
         </form>
       </div>
     </div>

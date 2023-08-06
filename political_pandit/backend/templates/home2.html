@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .navbar{
+            max-height: 70px;
+            min-height: 70px;
+        }
+        .mainHome2{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            
+        }
+
+        .points{
+            justify-self: flex-end
+        }
+
+        
+
+
+        
+    </style>
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img src="profile.jpg" alt="profile pic" width="30" height="24">
+                </a>            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link", href = "{% url 'home2' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}""nav-link">Tweets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href = "{% url 'task' %}">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href = "{% url 'wheel' %}">Coupons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link", href = "">Polls</a>
+                    </li>
+                </ul>  
+            </div>
+    </nav>
+    <div class="mainHome2 container">
+        <!-- <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body ">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div> -->
+          <div class="card container mt-5 border mb-3 border-black cardMain">
+            <div class="card-header">
+              <span style="font-size: larger;">Our Ideologies</span>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item border-1 border-black p-3 m-2 ">
+                    <div class="card-title " style="font-size: larger;">Social Unity: </div>
+                    <div class="point data">
+                        The Harmony Alliance Party believes in fostering social cohesion and inclusivity. They advocate for policies that promote equality, respect diversity, and eliminate discrimination based on race, gender, religion, or sexual orientation. Their vision is to build a society where all individuals can thrive and contribute to the collective well-being.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Sustainable Prosperity:  </div>
+                    <div class="point data">
+                        HAP is committed to achieving economic growth while ensuring environmental sustainability. They emphasize the development of green technologies, renewable energy sources, and responsible resource management. Their goal is to create a thriving economy that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Education and Innovation: </div>
+                    <div class="point data">
+                         The party places great importance on investing in education and research. They seek to improve the quality of education at all levels, promote lifelong learning opportunities, and support innovation and technological advancements. They believe that a well-educated and innovative society is better equipped to address challenges and seize opportunities.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Global Cooperation: </div>
+                    <div class="point data">
+                         HAP believes in fostering peaceful relations and cooperation between nations. They advocate for diplomacy, international partnerships, and multilateral agreements to address global issues such as climate change, poverty, and conflict. They prioritize dialogue over confrontation and strive to be a positive force in the international community.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Healthcare and Well-being: </div>
+                    <div class="point data">
+                         The party is dedicated to providing accessible and high-quality healthcare for all citizens. They support initiatives to improve mental health services, expand preventive care, and invest in medical research. They believe that a healthy and happy population is the foundation for a prosperous society.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Responsible Governance:  </div>
+                    <div class="point data">
+                        HAP is committed to transparency, accountability, and ethical conduct in government. They advocate for measures to combat corruption, ensure fair representation, and engage citizens in decision-making processes. They aim to build a government that serves the people's interests and protects the public good.
+                    </div>
+                </li>
+                <li class="list-group-item border-1 border-black p-3 m-2">
+                    <div class="card-title" style="font-size: larger;">Technological Empowerment: </div>
+                    <div class="point data">
+                        The party recognizes the transformative power of technology and aims to harness it for the benefit of society. They support policies that promote digital inclusion, data privacy, and cybersecurity while encouraging the responsible development and use of emerging technologies. The party also envisions a future where AI and technological advancements are harnessed to enhance human lives and protect the environment, rather than posing threats.
+
+                    </div>
+                </li>
+
+            </ul>
+          </div>
+            <div class="card points mt-5" style="width: 18rem; max-height: 400px;">
+            <img src="points.jpg" class="card-img-top" alt="points img">
+            <div class="card-body">
+                <p class="card-text imgCard m-3 ml-5" style="font-size: larger;">Points:{{points}} pts</p>
+            </div>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

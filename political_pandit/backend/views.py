@@ -89,7 +89,24 @@ def quiz(request):
                 points += 1
                 profile.points = points
                 profile.save()
+        return redirect('quiz2')
     if this_quiz.id==1:
         return render(request, 'quiz1.html', {'questions': this_quiz.questions.all()})
     else:
         return render(request, 'quiz2.html', {'questions': this_quiz.questions.all()})
+    
+def quiz2(request):
+    return render(request,'quiz2.html')
+
+def home2(request):
+    user=request.user
+    profile=Profile.objects.get(user=user)
+
+    context={'points':profile.points}
+    return render(request,'home2.html',context)
+
+def wheel(request):
+    return render(request,'wheel.html')
+
+def task(request):
+    return render(request,'task.html')
