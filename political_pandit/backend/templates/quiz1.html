@@ -33,10 +33,7 @@
             flex-direction: column;
             min-width: 1000px;
             max-width: 1000px;
-<<<<<<< HEAD
-=======
             
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
         }
         /* .question-answer{
             flex-direction: column;
@@ -47,7 +44,6 @@
             font-size: 30px;
         }
 
-<<<<<<< HEAD
         .makeItCrt{
             display: grid;
             grid-template-columns: 0.5fr 20fr;
@@ -59,19 +55,13 @@
         }
         
 
-=======
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-<<<<<<< HEAD
                   <img src="profile.jpg" alt="profile pic" width="30" height="24">
-=======
-                  <img src="" alt="profile pic" width="30" height="24">
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
                 </a>            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -79,7 +69,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link", href = "{% url 'home2' %}">Home</a>
                     </li>
                     <li class="nav-item">
@@ -93,25 +82,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link", href = "">Polls</a>
-=======
-                        <a class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Predict</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Coupouns</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Fund</a>
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
                     </li>
                 </ul>  
             </div>
     </nav>
     <div class="titleQuiz container">Quiz</div>
     <div class="main2 container mt-3 mb-3">
-<<<<<<< HEAD
         <form action="" method="post">
         {% csrf_token %} 
         {% for question in questions %}
@@ -131,81 +107,9 @@
             {% endfor %}
             <a href="{% url 'quiz2' %}"><button type="submit">Submit</button></a>
         </form>
-=======
-        <div class="card">
-            <div class="card-body">
-                    <div>What is the term used for the geographical area represented by an elected official?</div>
-                    <input type="radio" class="rrr" name="l1" id="q1">
-                    <label for="q1"> Election</label>
-                    <input type="radio" name="l1" id="q2">
-                    <label for="q2"> Legislature</label>
-                    <input type="radio" name="l1" id="q3">
-                    <label for="q3">Constituency</label>
-                    <input type="radio" name="l1" id="q4">
-                    <label for="q4">Caucus</label>
-                </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-                    <div>Which term refers to the branch of government responsible for making laws?</div>
-                    <input type="radio" name="l2" id="q1">
-                    <label for="q1"> Election</label>
-                    <input type="radio" name="l2" id="q2">
-                    <label for="q2"> Legislature</label>
-                    <input type="radio" name="l2" id="q3">
-                    <label for="q3">Constituency</label>
-                    <input type="radio" name="l2" id="q4">
-                    <label for="q4">Caucus</label>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div>When a seat in the legislative body becomes vacant between general elections, what type of election is held to fill that seat?</div>
-                    <input type="radio" name="l3" id="q1">
-                    <label for="q1"> By-Election</label>
-                    <input type="radio" name="l3" id="q2">
-                    <label for="q2"> Impeachment</label>
-                    <input type="radio" name="l3" id="q3">
-                    <label for="q3">Exit Poll</label>
-                    <input type="radio" name="l3" id="q4">
-                    <label for="q4">Referendum</label>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div>What is the process of charging and removing a government official from office due to alleged misconduct?</div>
-                    <input type="radio" name="l4" id="q1">
-                    <label for="q1"> By-Election</label>
-                    <input type="radio" name="l4" id="q2">
-                    <label for="q2"> Impeachment</label>
-                    <input type="radio" name="l4" id="q3">
-                    <label for="q3">Exit Poll</label>
-                    <input type="radio" name="l4" id="q4">
-                    <label for="q4">Referendum</label>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div>What type of survey is conducted with voters leaving the polling place to gather data on voting patterns and trends?</div>
-                    <input type="radio" name="l5" id="q1">
-                    <label for="q1"> By-Election</label>
-                    <input type="radio" name="l5" id="q2">
-                    <label for="q2"> Impeachment</label>
-                    <input type="radio" name="l5" id="q3">
-                    <label for="q3">Exit Poll</label>
-                    <input type="radio" name="l5" id="q4">
-                    <label for="q4">Referendum</label>
-                </div>
-            </div>
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
-
->>>>>>> 08a7f0a44a882717f7cecdb6099bd7cb1a5afe5b
